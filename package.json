@@ -1,0 +1,61 @@
+{
+  "name": "mdi-js",
+  "license": "MIT",
+  "version": "1.0.0",
+  "main": "./dist/cjs/index.js",
+  "types": "./dist/cjs/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/cjs/index.d.ts"
+    },
+    "./filled": {
+      "import": "./dist/esm/filled.js",
+      "require": "./dist/cjs/filled.js",
+      "types": "./dist/cjs/filled.d.ts"
+    },
+    "./outlined": {
+      "import": "./dist/esm/outlined.js",
+      "require": "./dist/cjs/outlined.js",
+      "types": "./dist/cjs/outlined.d.ts"
+    },
+    "./round": {
+      "import": "./dist/esm/round.js",
+      "require": "./dist/cjs/round.js",
+      "types": "./dist/cjs/round.d.ts"
+    },
+    "./sharp": {
+      "import": "./dist/esm/sharp.js",
+      "require": "./dist/cjs/sharp.js",
+      "types": "./dist/cjs/sharp.d.ts"
+    },
+    "./twotone": {
+      "import": "./dist/esm/twotone.js",
+      "require": "./dist/cjs/twotone.js",
+      "types": "./dist/cjs/twotone.d.ts"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/cjs/*.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "gen": "node genCode.js",
+    "build": "npm run build:cjs && npm run build:esm",
+    "build:cjs": "tsc --project ./tsconfig.cjs.json --outDir dist/cjs --module commonjs --target esnext",
+    "build:esm": "tsc --project ./tsconfig.cjs.json --outDir dist/esm --module esnext --target esnext"
+  },
+  "devDependencies": {
+    "download-git-repo": "^3.0.2",
+    "helper-js": "^2.0.7",
+    "typescript": "^4.5.5",
+    "xml-js": "^1.6.11"
+  }
+}
