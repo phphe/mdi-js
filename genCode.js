@@ -124,7 +124,7 @@ export { Icon } from "./utils/common";
     samePartsReverse.forEach((v, i) => {
       r = r.replaceAll(
         `"html": ${strWithoutEnd(JSON.stringify(v))}`,
-        `"html": samePart${i} + "`
+        `"html": samePart${samePartsReverse.length - 1 - i} + "`
       );
     });
     // replace commonAttrs
